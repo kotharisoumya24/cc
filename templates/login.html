@@ -3,12 +3,55 @@
         <meta charset="UTF-8">
         <title> Login </title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <style>
+            body {background-color: powderblue;}
+            .form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+        </style>
     </head>
     <body></br></br></br></br></br>
         <div align="center">
           <div align="center" class="border">
             <h2 class="word">
-                <form action="{{ url_for('login') }}" method="post">
+                <form class="form-inline" action="{{ url_for('login') }}" method="post">
                   <div class="msg">{{ msg }}</div>
                     <input id="username" name="username" type="text" placeholder="Enter Username" class="textbox"/></br></br>
                     <input type="submit" class="btn" value="Submit"></br></br>
